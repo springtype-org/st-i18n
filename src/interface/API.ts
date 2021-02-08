@@ -1,11 +1,11 @@
-import { Translation } from './Translations';
-import { Namespace } from './Namespace';
+import { Translations } from './Translations';
+import { NamespaceTranslation } from './NamespaceTranslation';
 import { TFunction } from './TFunction';
 
 export interface API {
   language: string;
   defaultNamespace: string;
-  trans: Translation;
-  t: (ns?: string) => TFunction;
-  load: (language: string, ns: Namespace) => API;
+  trans: Translations;
+  t: (namespace?: string) => TFunction;
+  load: (language: string, translations: NamespaceTranslation) => API;
 }

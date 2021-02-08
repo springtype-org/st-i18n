@@ -1,5 +1,5 @@
-import { Namespace } from './Namespace';
+import { NamespaceTranslation } from './NamespaceTranslation';
 
-export interface Translation {
-  [language: string]: Namespace;
+export interface Translations {
+  [language: string]: NamespaceTranslation;
 }

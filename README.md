@@ -62,9 +62,9 @@ The following contract is made between the webapp and `st-i18n`:
 export interface API {
   language: string;
   defaultNamespace: string;
-  trans: Translation;
-  t: (ns?: string) => TFunction;
-  load: (language: string, ns: Namespace) => API;
+  trans: Translations;
+  t: (namespace?: string) => TFunction;
+  load: (language: string, translations: NamespaceTranslation) => API;
 }
 ```
 
