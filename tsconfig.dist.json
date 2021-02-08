@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "outDir": "dist",
-    "declaration": true,
+    "jsxFactory": "tsx",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true
   },
   "exclude": [
     "node_modules",

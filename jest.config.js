@@ -10,7 +10,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  testRegex: '(/(__test__)/.*|(\\.|/))\\.test\\.(tsx|ts)?$',
+  testRegex: '(/(__test__)/.*|(\\.|/))\\.test\\.tsx?$',
   modulePathIgnorePatterns: ['/modules', '/_modules'],
   testPathIgnorePatterns: ['node_modules/', 'dist/'],
   maxConcurrency: 25,

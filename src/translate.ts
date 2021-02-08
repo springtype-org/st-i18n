@@ -5,8 +5,8 @@ import { TFunction } from './interface/TFunction';
 const VARIABLE_REGEX = /{([^}]*)}/g;
 
 export const translate = (ns: string | undefined, i18n: API): TFunction => (key: string, options = {}): string => {
-  const { language, trans, defaultNameSpace } = i18n;
-  const namespace = ns || defaultNameSpace;
+  const { language, trans, defaultNamespace } = i18n;
+  const namespace = ns || defaultNamespace;
 
   const namespaces = trans[language] || {};
   if (process.env.NODE_ENV !== 'production' && typeof trans[language] === 'undefined') {
@@ -43,6 +43,7 @@ export const translate = (ns: string | undefined, i18n: API): TFunction => (key:
     translation = translation.split(`{${optionKey}}`).join(optionValue);
   }
 
+  // istanbul ignore else
   if (process.env.NODE_ENV !== 'production') {
     const unusedOptions = Object.keys(consumedOptions);
     for (let index = 0; index < unusedOptions.length; index++) {

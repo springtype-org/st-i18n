@@ -33,6 +33,7 @@ describe('i18n in english', () => {
     i18n.language = 'de';
 
     expect(t('Hello world')).toEqual('Hello Welt');
+    expect(t('Hello world {name}', { name: 'Aron' })).toEqual('Hallo Aron Welt');
     expect(tNs('Max length {length}', { length: '10' })).toEqual('Maximale länge 10');
 
     expect(

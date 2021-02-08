@@ -1,6 +1,7 @@
 {
   "translation": {
-    "Hello world": "Hello Welt"
+    "Hello world": "Hello Welt",
+    "Hello world {name}": "Hallo {name} Welt"
   },
   "ns": {
     "Max length {length}": "Maximale länge {length}",
