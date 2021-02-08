@@ -87,7 +87,7 @@ Thank you so much for supporting us financially! 🙏🏻😎🥳👍
 
 <h2 align="center">Maintainers</h2>
 
-`st-state` is brought to you by:
+`st-i18n` is brought to you by:
 
 <table>
   <tbody>
