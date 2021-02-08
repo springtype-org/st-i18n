@@ -1,0 +1,9 @@
+{
+  "translation": {
+    "Hello world": "Hello world"
+  },
+  "ns": {
+    "Max length {length}": "Max length {length}",
+    "I drove about {km} km per {period} with an {carType}.": "I drove about {km} km per {period} with an {carType}."
+  }
+}

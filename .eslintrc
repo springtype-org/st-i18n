@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": [
+      "tsconfig.json"
+    ]
+  },
+  "extends": [
+    "prettier",
+    "eslint-config-airbnb",
+    "eslint-config-airbnb-typescript",
+    "eslint-config-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error"
+    ],
+    "no-cond-assign": "off",
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-multi-assign": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
+    "@typescript-eslint/indent": "off"
+  }
+}
