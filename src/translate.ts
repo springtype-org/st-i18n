@@ -5,24 +5,20 @@ import { TFunction } from './interface/TFunction';
 const VARIABLE_REGEX = /{([^}]*)}/g;
 
 export const translate = (ns: string | undefined, i18n: API): TFunction => (key: string, options = {}): string => {
-  const {
-    language,
-    trans,
-    option: { defaults, logger },
-  } = i18n;
-  const namespace = ns || defaults.namespace;
+  const { language, trans, defaultNameSpace } = i18n;
+  const namespace = ns || defaultNameSpace;
 
   const namespaces = trans[language] || {};
-  if (logger.missingLanguage && typeof trans[language] === 'undefined') {
+  if (process.env.NODE_ENV !== 'production' && typeof trans[language] === 'undefined') {
     console.warn(`(i18n) Missing language [lng=${language}]`);
   }
   const pairs = namespaces[namespace] || {};
-  if (logger.missingLanguage && typeof namespaces[namespace] === 'undefined') {
+  if (process.env.NODE_ENV !== 'production' && typeof namespaces[namespace] === 'undefined') {
     console.warn(`(i18n) Missing namespace [lng=${language} ns=${namespace}]`);
   }
 
   let translation = pairs[key] || key;
-  if (logger.missingKey && typeof pairs[key] === 'undefined') {
+  if (process.env.NODE_ENV !== 'production' && typeof pairs[key] === 'undefined') {
     console.warn(`(i18n) Missing key [lng=${language} ns=${namespace} key=${key}]`);
   }
 
@@ -39,7 +35,7 @@ export const translate = (ns: string | undefined, i18n: API): TFunction => (key:
     const optionKey = optionRawKey.substr(1, optionRawKey.length - 2);
 
     const optionValue = consumedOptions[optionKey] || '';
-    if (logger.missingOption && typeof consumedOptions[optionKey] === 'undefined') {
+    if (process.env.NODE_ENV !== 'production' && typeof consumedOptions[optionKey] === 'undefined') {
       console.warn(`(i18n) Missing option [lng=${language} ns=${namespace} key=${key} opt=${optionKey}]`);
     }
     delete consumedOptions[optionKey];
@@ -47,7 +43,7 @@ export const translate = (ns: string | undefined, i18n: API): TFunction => (key:
     translation = translation.split(`{${optionKey}}`).join(optionValue);
   }
 
-  if (logger.unknownOption) {
+  if (process.env.NODE_ENV !== 'production') {
     const unusedOptions = Object.keys(consumedOptions);
     for (let index = 0; index < unusedOptions.length; index++) {
       console.info(`(i18n) Unknown option [lng=${language} ns=${namespace} key=${key}, opt=${unusedOptions[index]}]`);

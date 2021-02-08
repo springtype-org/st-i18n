@@ -5,18 +5,7 @@ import { TFunction } from './interface/TFunction';
 import { translate } from './translate';
 
 export const i18n: API = {
-  option: {
-    defaults: {
-      namespace: 'translation',
-    },
-    logger: {
-      missingKey: true,
-      missingLanguage: true,
-      missingNamespace: true,
-      missingOption: true,
-      unknownOption: true,
-    },
-  },
+  defaultNameSpace: 'translation',
   language: 'en',
   trans: {},
   t: (ns?: string): TFunction => translate(ns, i18n),
