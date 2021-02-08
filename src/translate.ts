@@ -26,7 +26,7 @@ export const translate = (ns: string | undefined, i18n: API): TFunction => (key:
     console.warn(`(i18n) Missing key [lng=${language} ns=${namespace} key=${key}]`);
   }
 
-  const consumedOptions = { ...options };
+  const consumedOptions = Object.assign({}, options);
   const optionKeys = translation.match(VARIABLE_REGEX) || [];
 
   for (let index = 0; index < optionKeys.length; index++) {
