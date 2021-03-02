@@ -19,7 +19,7 @@ export const TranslationCmp = () => {
 
   return (
     <fragment>
-      <Trans ns="ns" tOption={{ text: 'springtype' }}>
+      <Trans tagName="h1" style={{ padding: 25 }} ns="ns" tOption={{ text: 'springtype' }}>
         <fragment>
           <b style={{ fontSize: 18 }}>
             Hello <i>dude</i>
@@ -34,7 +34,7 @@ export const TranslationCmp = () => {
         </fragment>
       </Trans>
       <br />
-      <button style={{ marginTop: 50 }} onClick={onButtonClick}>
+      <button style={{ marginTop: 5 }} onClick={onButtonClick}>
         <Trans>Change language</Trans>
       </button>
     </fragment>
