@@ -1,0 +1,36 @@
+{
+  "name": "st-query-e2e-smoke",
+  "version": "1.0.0",
+  "description": "Smoke test",
+  "scripts": {
+    "clean": "rimraf dist node_modules .cache",
+    "postclean": "yarn install",
+    "start": "parcel src/index.html",
+    "e2e": "testcafe chrome:headless __e2e__/*",
+    "serve:start": "forever start node_modules/.bin/parcel src/index.html",
+    "serve:stop": "forever stop node_modules/.bin/parcel src/index.html",
+    "build": "parcel build src/index.html --public-url '.'"
+  },
+  "author": "Aron Homberg <info@aron-homberg.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "forever": "^3.0.4",
+    "parcel": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "springtype-types": "^3.2.13",
+    "testcafe": "^1.10.1"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "resolutions": {
+    "parcel/node-forge": "^0.10.0"
+  },
+  "dependencies": {
+    "springtype": "^3.2.5",
+    "st-query": "^1.0.2",
+    "springtype-types": "^3.2.12"
+  }
+}

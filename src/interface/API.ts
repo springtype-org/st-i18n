@@ -4,6 +4,7 @@ import { TFunction } from './TFunction';
 
 export interface API {
   language: string;
+  changeLanguage: (language: string) => void;
   defaultNamespace: string;
   trans: Translations;
   t: (namespace?: string) => TFunction;

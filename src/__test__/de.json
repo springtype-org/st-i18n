@@ -1,6 +1,7 @@
 {
   "translation": {
     "Hello world": "Hello Welt",
+    "Hello <b>World</b>": "Hallo <b>Welt</b>",
     "Hello world {name}": "Hallo {name} Welt"
   },
   "ns": {

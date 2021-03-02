@@ -12,7 +12,7 @@ This is an exremely tiny, yet powerful library for translation. `st-i18n` does a
 
 <h2 align="center">Features</h2>
 
-- ✅ Implements a simple, i18next-like API including string interpolation 
+- ✅ Implements a simple, i18next-like API including string interpolation
 - ✅ Comes with namespace support
 - ✅ Tiny: `441 bytes` (best, brotli) - `599 bytes` (worst, umd, gz)
 - ✅ Zero dependencies
@@ -29,7 +29,7 @@ import { $ } from 'st-query';
 import { i18n } from 'st-i18n';
 
 // example with local translation source
-import de from './assets/translation/de.json'; 
+import de from './assets/translation/de.json';
 import en from './assets/translation/en.json';
 
 const t = i18n.t(/* optional: provide a namespace name here */);
@@ -49,7 +49,7 @@ i18n.load('en', en);
 i18n.language = 'de';
 
 // prints:  Hallo Jack, Welt!
-t('Hello world', {
+t('Hello world, {name}', {
   name: 'Jack'
 });
 ```

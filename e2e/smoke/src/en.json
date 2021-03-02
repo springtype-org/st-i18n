@@ -1,0 +1,8 @@
+{
+  "translation": {
+    "Change language": "Change language"
+  },
+  "ns": {
+    "<b>Hello <i>dude</i></b><br></br> Say <b1><a>{text}</a> cool!</b1>": "<b>Hello <i>dude</i></b><br></br> Say <b1><a>{text}</a> cool!</b1>"
+  }
+}

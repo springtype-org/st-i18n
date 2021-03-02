@@ -3,8 +3,7 @@ import { API } from './interface/API';
 import { TFunction } from './interface/TFunction';
 
 const VARIABLE_REGEX = /{([^}]*)}/g;
-
-export const translate = (ns: string | undefined, i18n: API): TFunction => (key: string, options = {}): string => {
+export const init = (ns: string | undefined, i18n: API, key: string) => {
   const { language, trans, defaultNamespace } = i18n;
   const namespace = ns || defaultNamespace;
 
@@ -17,10 +16,17 @@ export const translate = (ns: string | undefined, i18n: API): TFunction => (key:
     console.warn(`(i18n) Missing namespace [lng=${language} ns=${namespace}]`);
   }
 
-  let translation = pairs[key] || key;
+  const translation = pairs[key] || key;
   if (process.env.NODE_ENV !== 'production' && typeof pairs[key] === 'undefined') {
     console.warn(`(i18n) Missing key [lng=${language} ns=${namespace} key=${key}]`);
   }
+  return { namespace, translation, language };
+};
+
+export const translate = (ns: string | undefined, i18n: API): TFunction => (key: string, options = {}): string => {
+  const config = init(ns, i18n, key);
+  let { translation } = config;
+  const { language, namespace } = config;
 
   const consumedOptions = Object.assign({}, options);
   const optionKeys = translation.match(VARIABLE_REGEX) || [];
